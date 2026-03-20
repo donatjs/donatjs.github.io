@@ -1,0 +1,246 @@
+{
+  "page": "web/page/portal-docs",
+  "data": [
+
+    {
+      "section": "header",
+      "content": {
+        "nama": "DonatJS — Ekosistem & Dokumentasi",
+        "tagline": "5 layer. 16 file. Satu ekosistem yang kohesif.",
+        "deskripsi": "Panduan lengkap ekosistem DonatJS v2.2.\nDari setup pertama hingga aplikasi produksi.\nSetiap komponen punya narasi, docs, dan demo tersendiri.",
+        "icon": "book/150/var(--pColor)-var(--pLightColor)/1/float",
+        "cta": [
+          { "text": "Quick Start",  "url": "#quickstart",         "icon": "lightning" },
+          { "text": "5 Layer",      "url": "#layers",             "icon": "app"       },
+          { "text": "Demo",         "url": "web/page/portal-demo","icon": "eye"       }
+        ]
+      }
+    },
+
+    {
+      "section": "code",
+      "caption": "Quick Start — Dari Nol ke Aplikasi dalam 5 Menit",
+      "lang": "html",
+      "colorPreset": "nord",
+      "lineNumbers": true,
+      "code": "<!DOCTYPE html>\n<html lang=\"id\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <!-- 1. CSS — urutan penting -->\n  <link rel=\"stylesheet\" href=\"/al/svg/svg.css\">\n  <link rel=\"stylesheet\" href=\"/al/core/donat.css\">\n  <link rel=\"stylesheet\" href=\"/al/skin/skin.css\">\n</head>\n<body>\n  <!-- 2. Layout DOM wajib -->\n  <div id=\"modal\"  class=\"hide depan\"></div>\n  <div id=\"bawah\"  class=\"toast hide\">info</div>\n  <div id=\"panel-container\"></div>\n  <div id=\"menu\" class=\"menu\">\n    <ul id=\"leftmenu\">\n      <li data-info=\"web/page/home\"><img data-src=\"home\"> Home</li>\n    </ul>\n  </div>\n  <div id=\"main\" class=\"main\">\n    <div id=\"topmenu\" class=\"topmenu\"></div>\n    <div id=\"content\" class=\"content\"></div>\n  </div>\n\n  <!-- 3. JS — urutan wajib -->\n  <script src=\"/al/skin/skin.js\"></script>\n  <script src=\"/al/core/donat.js\"></script>\n  <script src=\"/al/ui/ui.js\"></script>\n  <script src=\"/al/svg/svg.js\"></script>\n\n  <!-- 4. Bootstrap -->\n  <script>\n    // Config\n    const config = {\n      api: 0,\n      getdata: (id) => `data/${id}.json`,\n    };\n\n    // Controller\n    window.web = {\n      controller: {\n        page: (id) => ui.render.page(config.getdata(id))\n      }\n    };\n\n    // Menu listener\n    d.gebi('leftmenu').addEventListener('click', (e) => {\n      const li = e.target.closest('li');\n      if (li) navigate(li.getAttribute('data-info'));\n    });\n\n    // Tema & ikon\n    Theme.set('donat', 'hijau', 'framework');\n    loadSVGLibraries(['/al/svg/svg.json']);\n  </script>\n</body>\n</html>"
+    },
+
+    {
+      "section": "code",
+      "caption": "Halaman JSON Pertama — data/web/page/home.json",
+      "lang": "json",
+      "colorPreset": "dracula",
+      "code": "{\n  \"page\": \"home\",\n  \"data\": [\n    {\n      \"section\": \"header\",\n      \"content\": {\n        \"nama\":    \"Selamat Datang\",\n        \"tagline\": \"Aplikasi saya berjalan.\",\n        \"deskripsi\": \"Dibangun dengan DonatJS.\",\n        \"icon\": \"donat/150/var(--pColor)/1/float\"\n      }\n    },\n    {\n      \"section\": \"stats\",\n      \"caption\": \"Fitur Utama\",\n      \"content\": [\n        { \"id\":1, \"nama\":\"Produk\", \"isi\":\"Kelola produk\", \"icon\":\"box/150\",   \"url\":\"inv/page/inv\" },\n        { \"id\":2, \"nama\":\"Kasir\",  \"isi\":\"Proses order\", \"icon\":\"cart/150\",  \"url\":\"pos/page/pos\" },\n        { \"id\":3, \"nama\":\"Laporan\",\"isi\":\"Lihat data\",   \"icon\":\"chart/150\", \"url\":\"web/page/report\" }\n      ]\n    },\n    {\n      \"section\": \"btn\",\n      \"btn\": [\n        { \"text\":\"Buka Kasir\", \"url\":\"pos/page/pos\", \"icon\":\"cart/24\" }\n      ]\n    }\n  ]\n}"
+    },
+
+    {
+      "section": "table",
+      "caption": "Urutan Load — 8 File, 4 Layer",
+      "content": [
+        { "Urutan": "1", "File": "svg.css",   "Layer": "SVG",    "Kenapa": "Style .di-svg dan animasi. Wajib sebelum body render." },
+        { "Urutan": "2", "File": "donat.css", "Layer": "Core",   "Kenapa": "Design token :root, grid, semua komponen dasar." },
+        { "Urutan": "3", "File": "skin.css",  "Layer": "Skin",   "Kenapa": "Token fallback, sidebar, layout mode CSS." },
+        { "Urutan": "4", "File": "skin.js",   "Layer": "Skin",   "Kenapa": "Auto Theme.init() — wajib sebelum donat.js agar token siap." },
+        { "Urutan": "5", "File": "donat.js",  "Layer": "Core",   "Kenapa": "Kernel `d` — wajib sebelum ui.js dan kit modules." },
+        { "Urutan": "6", "File": "ui.js",     "Layer": "UI",     "Kenapa": "Router + render engine + state." },
+        { "Urutan": "7", "File": "svg.js",    "Layer": "SVG",    "Kenapa": "Icon engine. refreshIcons() dipanggil setelah setiap render." },
+        { "Urutan": "8", "File": "login.js",  "Layer": "Kit",    "Kenapa": "Auto-init login.controller.login(). Butuh d, ui, svg." }
+      ]
+    },
+
+    {
+      "section": "stats",
+      "caption": "Layer 1 — Core: donat.js + donat.css",
+      "content": [
+        {
+          "id": 1,
+          "nama": "donat.js — Kernel d",
+          "isi": "Object `d` adalah pusat ekosistem.\nDOM shortcuts, localStorage, toast, modal,\nside panel, color interpolasi, MVC lengkap,\ndan service CRUD via Fetch API.",
+          "icon": "code/150/var(--pColor)",
+          "url": "web/page/donatjs-narasi"
+        },
+        {
+          "id": 2,
+          "nama": "donat.css — Design System",
+          "isi": "Design token :root (--pColor, --radius, --shadow),\ngrid system col-1-N, komponen UI lengkap:\ncard, modal, table, input, button, tabs,\nprogress, cert, quiz, side panel.",
+          "icon": "layout/150/var(--pColor)",
+          "url": "web/page/donatjs-docs"
+        }
+      ]
+    },
+
+    {
+      "section": "stats",
+      "caption": "Layer 2 — SVG Engine: svg.js + svg.json",
+      "content": [
+        {
+          "id": 1,
+          "nama": "svg.js — Icon Engine",
+          "isi": "Satu atribut HTML menggantikan semua:\n<img data-src=\"id/size/color/opacity/anim\">\n80+ ikon, gradien otomatis, 5 animasi built-in,\nkomposit multi-layer, MutationObserver lazy render.",
+          "icon": "svg/150/var(--pColor)",
+          "url": "web/page/svg-narasi"
+        },
+        {
+          "id": 2,
+          "nama": "svg.json — Icon Library",
+          "isi": "80+ ikon dalam 9 kategori:\nnav, ui, action, data, user, sosmed, brand, misc, composite.\nFormat grouped JSON — tambah ikon baru\ncukup edit file, tidak perlu rebuild.",
+          "icon": "search/150/var(--pColor)",
+          "url": "web/page/svg-demo"
+        }
+      ]
+    },
+
+    {
+      "section": "stats",
+      "caption": "Layer 3 — Skin System: skin.js + skin.json",
+      "content": [
+        {
+          "id": 1,
+          "nama": "skin.js — Theme Engine",
+          "isi": "Tiga dimensi tema dalam satu panggilan:\nTheme.set('donat', 'hijau', 'framework')\nSVG pattern + color pallet + layout mode.\nRuntime, no rebuild, queue system built-in.",
+          "icon": "piawai/150/var(--pColor)",
+          "url": "web/page/skin-narasi"
+        },
+        {
+          "id": 2,
+          "nama": "skin.json — Theme Data",
+          "isi": "Sumber data tunggal:\n4 SVG pattern (sismadi/donat/wafel/piawai),\n6 color pallet bawaan,\n4 layout mode (blog/admin/catalog/framework),\nparallax items.",
+          "icon": "file/150/var(--pColor)",
+          "url": "web/page/skin-docs"
+        }
+      ]
+    },
+
+    {
+      "section": "stats",
+      "caption": "Layer 4 — UI Engine: ui.js",
+      "content": [
+        {
+          "id": 1,
+          "nama": "ui.router — SPA Routing",
+          "isi": "URL query string → window[app].controller[func]()\ndispatch, navigate, path, setActive.\nBack/forward button bekerja normal.\nGlobal alias: navigate(), path().",
+          "icon": "home/150/var(--pColor)",
+          "url": "web/page/ui-narasi"
+        },
+        {
+          "id": 2,
+          "nama": "ui.render — JSON Engine",
+          "isi": "10 tipe blok: header, stats, table, progress,\nbtn, kursus, cert, csv, mp4, pdf.\nFetch + cache, state per-seksi (search/filter/paging),\nquiz, sertifikat built-in.",
+          "icon": "app/150/var(--pColor)",
+          "url": "web/page/ui-docs"
+        }
+      ]
+    },
+
+    {
+      "section": "stats",
+      "caption": "Layer 5 — Kit Modules",
+      "content": [
+        {
+          "id": 1,
+          "nama": "login.js — Autentikasi",
+          "isi": "Topmenu dinamis (guest/user),\napp-grid launcher, sign in/up/out,\nlocalStorage session, panel dropdown.\nAuto-init saat file dimuat.",
+          "icon": "user/150/var(--pColor)",
+          "url": "web/page/modules-narasi"
+        },
+        {
+          "id": 2,
+          "nama": "web.js — Page Controller",
+          "isi": "Controller untuk navigate, side panel,\nlayout picker, sertifikat + download PNG.\n4 tema preset (dark/green/blue/pastel-forest).",
+          "icon": "home/150/var(--pColor)",
+          "url": "web/page/modules-docs"
+        },
+        {
+          "id": 3,
+          "nama": "pos.js — Point of Sale",
+          "isi": "Keranjang belanja real-time:\nadd/remove/updateQty/setQty/checkout.\nVirtual JSON builder, render ke sidePanel.\n_patchUI() intercept klik card otomatis.",
+          "icon": "cart/150/var(--pColor)",
+          "url": "web/page/modules-docs"
+        },
+        {
+          "id": 4,
+          "nama": "app-pos.js — Engine Patch",
+          "isi": "Daftarkan section 'cart' ke ui.render.engine\ntanpa modifikasi core ui.js.\nPola yang bisa diikuti untuk semua modul baru:\ninventory, finance, HR.",
+          "icon": "code/150/var(--pColor)",
+          "url": "web/page/modules-docs"
+        }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "Peta Lengkap — 16 File Ekosistem",
+      "content": [
+        { "File": "donat.css",   "Layer": "Core",   "Ukuran": "~15KB", "Tanggung Jawab": "Design token, grid, 15+ komponen UI" },
+        { "File": "donat.js",    "Layer": "Core",   "Ukuran": "~12KB", "Tanggung Jawab": "Kernel d: DOM, storage, toast, modal, side panel, MVC, service CRUD" },
+        { "File": "svg.css",     "Layer": "SVG",    "Ukuran": "~4KB",  "Tanggung Jawab": "Container .di-svg, animasi CSS, .gIcons grid" },
+        { "File": "svg.js",      "Layer": "SVG",    "Ukuran": "~8KB",  "Tanggung Jawab": "Parse data-src, build SVG, cache, MutationObserver, gradien, komposit" },
+        { "File": "svg.json",    "Layer": "SVG",    "Ukuran": "~10KB", "Tanggung Jawab": "80+ ikon path dalam 9 kategori + 3 composite" },
+        { "File": "skin.css",    "Layer": "Skin",   "Ukuran": "~6KB",  "Tanggung Jawab": "Token fallback :root, sidebar, footer pattern, 4 layout modifier, responsive" },
+        { "File": "skin.js",     "Layer": "Skin",   "Ukuran": "~5KB",  "Tanggung Jawab": "Theme.init/set/setSvg/setPallet/setLayout/addSvg/addPallet/parallax" },
+        { "File": "skin.json",   "Layer": "Skin",   "Ukuran": "~4KB",  "Tanggung Jawab": "4 svgPath, 6 colorPallet, 4 layout, parallax items" },
+        { "File": "ui.css",      "Layer": "UI",     "Ukuran": "~3KB",  "Tanggung Jawab": ".section-container, .progress-item, .form controls, quiz radio" },
+        { "File": "ui.js",       "Layer": "UI",     "Ukuran": "~18KB", "Tanggung Jawab": "router, fetch+cache, state, render engine (10 blok), quiz, cert" },
+        { "File": "login.css",   "Layer": "Kit",    "Ukuran": "~5KB",  "Tanggung Jawab": "Topmenu, app-panel, app-grid, login-wrap, media player, breadcrumb" },
+        { "File": "login.js",    "Layer": "Kit",    "Ukuran": "~8KB",  "Tanggung Jawab": "Auth sign in/up/out, topmenu, app-grid, session, panel dropdown" },
+        { "File": "web.js",      "Layer": "Kit",    "Ukuran": "~5KB",  "Tanggung Jawab": "page/side/layout/cert controller, switchStyle, downloadPNG" },
+        { "File": "pos.css",     "Layer": "Kit",    "Ukuran": "~4KB",  "Tanggung Jawab": "Cart list, row item, qty control, summary, action buttons" },
+        { "File": "pos.js",      "Layer": "Kit",    "Ukuran": "~8KB",  "Tanggung Jawab": "Cart CRUD, virtual JSON, checkout, controller, _patchUI" },
+        { "File": "app-pos.js",  "Layer": "Kit",    "Ukuran": "~2KB",  "Tanggung Jawab": "Patch ui.render.engine + daftarkan renderer section 'cart'" }
+      ]
+    },
+
+    {
+      "section": "code",
+      "caption": "Spec-Driven Development — Dari Nol ke Produksi",
+      "lang": "js",
+      "colorPreset": "github-dark",
+      "code": "// Alur kerja DonatJS — 5 fase:\n\n// FASE 1: Tulis JSON halaman (tanpa kode JS)\n// data/web/page/home.json → { page, data:[{section, content}] }\n\n// FASE 2: Daftarkan controller minimal\nwindow.web = {\n  controller: {\n    page: (id) => ui.render.page(config.getdata(id))\n  }\n};\n\n// FASE 3: Tambahkan menu di HTML\n// <li data-info=\"web/page/home\">Home</li>\n\n// FASE 4: Aktifkan interaktivitas\n// Di JSON: { \"control\":\"multi\", \"filter\":\"kategori,status\" }\n// → search + filter + paging otomatis, tanpa kode JS\n\n// FASE 5: Hubungkan API\n// config.api = 1;\n// app.host = 'https://api.saya.com/index.php';\n// d.service.create/update/delete siap dipakai\n\n// Hasil: aplikasi CRUD produksi\n// Tanpa: npm, webpack, virtual DOM, TypeScript wajib"
+    },
+
+    {
+      "section": "progress",
+      "caption": "Kematangan Ekosistem DonatJS v2.2",
+      "content": [
+        { "label": "Core — donat.js + donat.css",          "percent": 100, "value": "Stable v2.2" },
+        { "label": "SVG Engine — svg.js + svg.json",       "percent": 98,  "value": "Stable v2.1" },
+        { "label": "Skin System — skin.js + skin.json",    "percent": 95,  "value": "Stable v2.0" },
+        { "label": "UI Engine — ui.js",                    "percent": 95,  "value": "Stable v2.0" },
+        { "label": "Kit Login — login.js",                 "percent": 95,  "value": "Stable v2.0" },
+        { "label": "Kit Web — web.js",                     "percent": 92,  "value": "Stable v2.0" },
+        { "label": "Kit POS — pos.js + app-pos.js",        "percent": 90,  "value": "Stable v2.0" },
+        { "label": "Code Renderer — ui-code-patch.js",     "percent": 88,  "value": "Patch v2.1"  },
+        { "label": "LMS Module",                           "percent": 80,  "value": "Beta"        },
+        { "label": "Finance Module",                       "percent": 65,  "value": "Dev"         },
+        { "label": "Reactive state otomatis",              "percent":  0,  "value": "Tidak Ada"   }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "Navigasi Dokumentasi Lengkap",
+      "content": [
+        { "Komponen": "Core — donat.js",         "Narasi": "web/page/donatjs-narasi",  "Docs": "web/page/donatjs-docs",  "Demo": "—" },
+        { "Komponen": "SVG Engine — svg.js",     "Narasi": "web/page/svg-narasi",     "Docs": "web/page/svg-docs",      "Demo": "web/page/svg-demo" },
+        { "Komponen": "Skin System — skin.js",   "Narasi": "web/page/skin-narasi",    "Docs": "web/page/skin-docs",     "Demo": "web/page/skin-demo" },
+        { "Komponen": "UI Engine — ui.js",       "Narasi": "web/page/ui-narasi",      "Docs": "web/page/ui-docs",       "Demo": "web/page/ui-demo" },
+        { "Komponen": "Kit Modules",             "Narasi": "web/page/modules-narasi", "Docs": "web/page/modules-docs",  "Demo": "web/page/modules-demo" },
+        { "Komponen": "Portal DonatJS",          "Narasi": "web/page/portal-narasi",  "Docs": "web/page/portal-docs",   "Demo": "web/page/portal-demo" }
+      ]
+    },
+
+    {
+      "section": "btn",
+      "btn": [
+        { "text": "Core — donat.js",    "url": "web/page/donatjs-narasi",  "icon": "code"    },
+        { "text": "SVG Engine",         "url": "web/page/svg-narasi",      "icon": "svg"     },
+        { "text": "Skin System",        "url": "web/page/skin-narasi",     "icon": "piawai"  },
+        { "text": "UI Engine",          "url": "web/page/ui-narasi",       "icon": "layout"  },
+        { "text": "Kit Modules",        "url": "web/page/modules-narasi",  "icon": "app"     },
+        { "text": "Demo Live",          "url": "web/page/portal-demo",     "icon": "eye"     }
+      ]
+    }
+
+  ]
+}

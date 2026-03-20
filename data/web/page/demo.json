@@ -1,0 +1,252 @@
+{
+  "page": "web/page/portal-demo",
+  "data": [
+
+    {
+      "section": "header",
+      "content": {
+        "nama": "DonatJS — Demo Live",
+        "tagline": "Semua yang Anda lihat di halaman ini dirender dari JSON.",
+        "deskripsi": "Buka DevTools → Network → lihat tidak ada bundler.\n Buka Elements → lihat &lt;svg&gt; bukan &lt;img&gt;.\n Buka Application → lihat localStorage jika sudah login.\nBuka Console → ketik Theme.set('wafel','merah','blog') dan lihat hasilnya.",
+        "icon":  "eye/150/var(--pColor)-var(--pLightColor)/1/float",
+        "icon1": "donat/100/var(--pColor)/0.07",
+        "icon2": "piawai/80/var(--pColor)/0.05",
+        "icon3": "wafel/60/var(--pColor)/0.04",
+        "cta": [
+          { "text": "Docs Lengkap",  "url": "web/page/portal-docs",  "icon": "book"      },
+          { "text": "Narasi",        "url": "web/page/portal-narasi", "icon": "info"      },
+          { "text": "Lihat JSON",    "modal": "web/side/portal-src",  "icon": "file"      }
+        ]
+      }
+    },
+
+    {
+      "section": "stats",
+      "caption": "Demo — 5 Layer Ekosistem (Klik untuk Masuk)",
+      "content": [
+        {
+          "id": 1,
+          "nama": "Core",
+          "isi": "donat.js + donat.css\nKernel d, MVC, CRUD, CSS token,\ngrid, komponen UI dasar.\nFondasi seluruh ekosistem.",
+          "icon": "code/150/var(--pColor)",
+          "url": "web/page/donatjs-narasi"
+        },
+        {
+          "id": 2,
+          "nama": "SVG Engine",
+          "isi": "svg.js + svg.json\n80+ ikon, gradien, 5 animasi,\nkomposit multi-layer.\ndata-src=\"id/size/color/anim\"",
+          "icon": "svg/150/var(--pColor)",
+          "url": "web/page/svg-narasi"
+        },
+        {
+          "id": 3,
+          "nama": "Skin System",
+          "isi": "skin.js + skin.json\nSVG pattern + warna + layout.\nTheme.set() — satu baris\nganti seluruh identitas visual.",
+          "icon": "piawai/150/var(--pColor)",
+          "url": "web/page/skin-narasi"
+        },
+        {
+          "id": 4,
+          "nama": "UI Engine",
+          "isi": "ui.js — Router SPA,\nfetch cache, state per-seksi,\n10 tipe render blok,\nquiz, sertifikat.",
+          "icon": "layout/150/var(--pColor)",
+          "url": "web/page/ui-narasi"
+        },
+        {
+          "id": 5,
+          "nama": "Kit Modules",
+          "isi": "login + web + pos + app-pos.\nAuth, page controller,\nPOS keranjang, download cert.\nModul bisnis siap pakai.",
+          "icon": "app/150/var(--pColor)",
+          "url": "web/page/modules-narasi"
+        }
+      ]
+    },
+
+    {
+      "section": "stats",
+      "caption": "Demo — Navigasi ke Semua Halaman Docs",
+      "content": [
+        { "id": 1,  "nama": "Narasi donat.js",  "isi": "Posisi di arsitektur, komparasi jujur",     "icon": "code/100/var(--pColor)",    "url": "web/page/donatjs-narasi"  },
+        { "id": 2,  "nama": "Docs donat.js",    "isi": "API, model, view, controller, service",     "icon": "book/100/var(--pColor)",    "url": "web/page/donatjs-docs"    },
+        { "id": 3,  "nama": "Narasi svg.js",    "isi": "Hook kuat, vs Font Awesome, Iconify",       "icon": "svg/100/var(--pColor)",     "url": "web/page/svg-narasi"      },
+        { "id": 4,  "nama": "Docs svg.js",      "isi": "data-src sintaks, API, schema svg.json",    "icon": "book/100/var(--pColor)",    "url": "web/page/svg-docs"        },
+        { "id": 5,  "nama": "Demo svg.js",      "isi": "Galeri ikon, gradien, animasi, komposit",   "icon": "eye/100/var(--pColor)",     "url": "web/page/svg-demo"        },
+        { "id": 6,  "nama": "Narasi skin.js",   "isi": "Hook kuat, vs Tailwind, MUI ThemeProvider", "icon": "piawai/100/var(--pColor)",  "url": "web/page/skin-narasi"     },
+        { "id": 7,  "nama": "Docs skin.js",     "isi": "API Theme.*, schema skin.json, parallax",   "icon": "book/100/var(--pColor)",    "url": "web/page/skin-docs"       },
+        { "id": 8,  "nama": "Demo skin.js",     "isi": "Ganti tema langsung, 6 palet, 4 layout",    "icon": "eye/100/var(--pColor)",     "url": "web/page/skin-demo"       },
+        { "id": 9,  "nama": "Narasi ui.js",     "isi": "Hook kuat, vs React Router, Redux",         "icon": "layout/100/var(--pColor)",  "url": "web/page/ui-narasi"       },
+        { "id": 10, "nama": "Docs ui.js",       "isi": "Router, fetch, state, render, quiz API",    "icon": "book/100/var(--pColor)",    "url": "web/page/ui-docs"         },
+        { "id": 11, "nama": "Demo ui.js",       "isi": "Semua 10 tipe blok live, search, filter",   "icon": "eye/100/var(--pColor)",     "url": "web/page/ui-demo"         },
+        { "id": 12, "nama": "Narasi Modules",   "isi": "Hook kuat, vs NextAuth, Redux, html2canvas","icon": "app/100/var(--pColor)",     "url": "web/page/modules-narasi"  },
+        { "id": 13, "nama": "Docs Modules",     "isi": "login, web, pos, app-pos API + SDD",        "icon": "book/100/var(--pColor)",    "url": "web/page/modules-docs"    },
+        { "id": 14, "nama": "Demo Modules",     "isi": "Demo login, POS, tema, navigasi live",      "icon": "eye/100/var(--pColor)",     "url": "web/page/modules-demo"    }
+      ]
+    },
+
+    {
+      "section": "stats",
+      "caption": "Demo — Tema Langsung Berubah (Klik Kartu)",
+      "content": [
+        {
+          "id": 1,
+          "nama": "Donat + Hijau",
+          "isi": "Theme.set('donat','hijau','framework')\nDefault DonatJS.",
+          "icon": "donat/100/#6a994e",
+          "url": "",
+          "modal": "skin/set/donat-hijau-framework"
+        },
+        {
+          "id": 2,
+          "nama": "Wafel + Biru + Admin",
+          "isi": "Theme.set('wafel','biru','admin')\nSidebar kompak 50px.",
+          "icon": "wafel/100/#00afb9",
+          "url": "",
+          "modal": "skin/set/wafel-biru-admin"
+        },
+        {
+          "id": 3,
+          "nama": "Piawai + Merah + Blog",
+          "isi": "Theme.set('piawai','merah','blog')\nSidebar hilang, footer tampil.",
+          "icon": "piawai/100/#e63946",
+          "url": "",
+          "modal": "skin/set/piawai-merah-blog"
+        },
+        {
+          "id": 4,
+          "nama": "Sismadi + Hitam",
+          "isi": "Theme.set('sismadi','hitam','framework')\nMonokrom elegan.",
+          "icon": "sismadi/100/#2d2d2d",
+          "url": "",
+          "modal": "skin/set/sismadi-hitam-framework"
+        }
+      ]
+    },
+
+    {
+      "section": "stats",
+      "caption": "Demo — Produk yang Dibangun di Atasnya",
+      "content": [
+        {
+          "id": 1,
+          "nama": "LMS",
+          "isi": "Learning Management System.\nKursus, modul, kuis, sertifikat digital.",
+          "icon": "edu/150/var(--pColor)",
+          "url": "lms/web/page/home"
+        },
+        {
+          "id": 2,
+          "nama": "POS",
+          "isi": "Kasir digital untuk UMKM.\nKeranjang, checkout, transaksi.",
+          "icon": "cart/150/var(--pColor)",
+          "url": "pos/page/pos"
+        },
+        {
+          "id": 3,
+          "nama": "Inventory",
+          "isi": "Manajemen stok barang.\nMasuk, keluar, laporan.",
+          "icon": "box/150/var(--pColor)",
+          "url": "web/page/inventory"
+        },
+        {
+          "id": 4,
+          "nama": "Presensi",
+          "isi": "Absensi via QR Code.\nRekap harian dan laporan.",
+          "icon": "qrcode/150/var(--pColor)",
+          "url": "web/page/presensi"
+        },
+        {
+          "id": 5,
+          "nama": "Finance",
+          "isi": "Catatan keuangan usaha.\nPemasukan, pengeluaran, rekap.",
+          "icon": "wallet/150/var(--pColor)",
+          "url": "web/page/finance"
+        },
+        {
+          "id": 6,
+          "nama": "Web Templates",
+          "isi": "Starter kit SPA siap pakai.\nBerbagai layout dan tema.",
+          "icon": "layout/150/var(--pColor)",
+          "url": "web/page/templates"
+        }
+      ]
+    },
+
+    {
+      "section": "progress",
+      "caption": "DonatJS — Dimana Kekuatan dan Batasnya",
+      "content": [
+        { "label": "Setup dari nol (&lt; 1 menit)",              "percent": 98, "value": "Terbaik" },
+        { "label": "Cocok untuk CRUD & dashboard bisnis",     "percent": 96, "value": "Ideal"   },
+        { "label": "JSON-driven UI tanpa kode JS",            "percent": 94, "value": "Unik"    },
+        { "label": "Deploy ke shared hosting tanpa Node.js",  "percent": 100,"value": "Penuh"   },
+        { "label": "Theme runtime tanpa rebuild",             "percent": 100,"value": "Penuh"   },
+        { "label": "Reaktivitas granular (per keystroke)",    "percent": 10, "value": "Tidak"   },
+        { "label": "SEO / Server-side rendering",             "percent":  0, "value": "Tidak"   },
+        { "label": "Type safety (TypeScript)",                "percent":  0, "value": "Tidak"   }
+      ]
+    },
+
+    {
+      "section": "code",
+      "caption": "Demo — Coba Semua di Konsol Browser",
+      "lang": "js",
+      "colorPreset": "dracula",
+      "showPresets": true,
+      "code": "// Buka DevTools Console dan coba:\n\n// === Core ===\nd.info('Halo dari DonatJS!');\nd.color(5); // array 5 warna interpolasi\nd.model.nama; // nama modul aktif\n\n// === SVG ===\nObject.keys(getIcons()).length;  // jumlah ikon di cache\nsvgIcon('donat', '64', 'var(--pColor)'); // render ke string\naddIcon('test-circle', 'M12 2 A10 10 0 1 0 12 22 A10 10 0 1 0 12 2');\n\n// === Skin ===\nTheme.list(); // semua pilihan tersedia\nTheme.set('wafel', 'merah', 'framework');\nrefreshIcons();\nTheme.set('donat', 'hijau', 'framework'); // kembalikan\nrefreshIcons();\n\n// Palet custom runtime:\nTheme.addPallet('tosca', {\n  pColor:'#2ec4b6', pLightColor:'#cbf3f0', pDarkColor:'#1a936f'\n});\nTheme.setPallet('tosca');\nrefreshIcons();\n\n// === UI ===\nnavigate('web/page/portal-docs');  // navigasi\nui.fetch.clear();                  // kosongkan HTTP cache\nconsole.log(ui.render);            // inspect render engine\n\n// === POS ===\npos.addItem('x', 'Produk Test', 'Rp 10.000');\npos.addItem('x', 'Produk Test', 'Rp 10.000'); // qty++\npos.cart; // inspect state\npos.getTotal(); // 10000\npos.openCart(); // tampilkan sidePanel\npos.clearCart();\n\n// === Login ===\nlogin.controller.isLogged(); // boolean\nJSON.parse(d.getls('data') || 'null'); // data user"
+    },
+
+    {
+      "section": "table",
+      "caption": "Seluruh Fitur di Halaman Demo Ini",
+      "content": [
+        { "Blok": "1 — Header",             "Fitur": "icon + 3 parallax dekoratif (icon1/2/3), CTA 3 tombol" },
+        { "Blok": "2 — 5 Layer (stats)",    "Fitur": "5 kartu navigasi ke narasi masing-masing layer" },
+        { "Blok": "3 — 14 Docs (stats)",    "Fitur": "Grid semua halaman narasi+docs+demo dengan search single" },
+        { "Blok": "4 — Tema Demo (stats)",  "Fitur": "4 kombinasi tema, klik langsung berubah via modal → skin/set/..." },
+        { "Blok": "5 — 6 Produk (stats)",   "Fitur": "Aplikasi nyata yang dibangun di atas DonatJS" },
+        { "Blok": "6 — Progress bar",       "Fitur": "8 metrik kekuatan dan batas DonatJS" },
+        { "Blok": "7 — Code playground",    "Fitur": "30+ perintah siap coba, showPresets:true untuk picker tema" }
+      ]
+    },
+
+    {
+      "section": "stats",
+      "caption": "Tentang",
+      "content": [
+        {
+          "id": 1,
+          "nama": "DonatJS",
+          "isi": "Ekosistem frontend vanilla JavaScript.\nDikelola oleh Wawan Sismadi.\nJakarta, Indonesia, 2024–2026.",
+          "icon": "donat/100/var(--pColor)",
+          "url": ""
+        },
+        {
+          "id": 2,
+          "nama": "GitHub",
+          "isi": "Source code, roadmap,\ndan issue tracker.\nOpen source.",
+          "icon": "github/100/var(--pColor)",
+          "url": "https://github.com"
+        },
+        {
+          "id": 3,
+          "nama": "Kontak",
+          "isi": "wawan@sismadi.com \n +62 878 8507 3237\nJakarta, Indonesia",
+          "icon": "whatsapp/100/green",
+          "url": "https://wa.me/6287885073237"
+        }
+      ]
+    },
+
+    {
+      "section": "btn",
+      "btn": [
+        { "text": "Narasi DonatJS",   "url": "web/page/portal-narasi",  "icon": "info"     },
+        { "text": "Docs & Ekosistem", "url": "web/page/portal-docs",    "icon": "book"     },
+        { "text": "Demo Modules",     "url": "web/page/modules-demo",   "icon": "app"      },
+        { "text": "Demo UI Engine",   "url": "web/page/ui-demo",        "icon": "layout"   },
+        { "text": "Hubungi Kami",     "url": "https://wa.me/6287885073237", "icon": "whatsapp" }
+      ]
+    }
+
+  ]
+}

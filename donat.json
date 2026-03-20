@@ -1,0 +1,75 @@
+{
+    "_info": "DonatJS — Model default kernel. Dimuat otomatis oleh d.service.init().",
+    "versi": "2.1",
+
+    "app": {
+        "nama":       "donat",
+        "publicMode": false,
+        "host":       "http://localhost/donat/api/index.php"
+    },
+
+    "css": {
+        "ul":      "ul",
+        "li":      "li",
+        "a":       "a",
+        "search":  "search",
+        "page":    "shadow row",
+        "table":   "table",
+        "form":    "form row",
+        "gInput":  "gInput",
+        "input":   "input",
+        "label":   "label",
+        "gButton": "gButton",
+        "button":  "button",
+        "gIcons":  "gIcons",
+        "icons":   "icons"
+    },
+
+    "tabs": {
+        "items":  ["Data", "Bantuan"],
+        "active": 0
+    },
+
+    "table": {
+        "id":   "master",
+        "rpp":  5,
+        "page": 1,
+        "fld":  "id,nama",
+        "data": [
+            { "id": 1, "nama": "satu", "isi": 250, "icon": "bayam", "url": "d.controller.view()" },
+            { "id": 2, "nama": "dua",  "isi": 75,  "icon": "geo",   "url": "d.controller.view()" },
+            { "id": 3, "nama": "tiga", "isi": 250, "icon": "cert",  "url": "d.controller.view()" }
+        ],
+        "tipe": [
+            { "id": "id",   "nama": "text",     "arr": "1,2,5", "info": "abaikan",     "perlu": "0" },
+            { "id": "nama", "nama": "text",     "arr": "1,2,5", "info": "wajib diisi", "perlu": "1" },
+            { "id": "isi",  "nama": "textarea", "arr": "1,2",   "info": "isi bebas",   "perlu": "0" }
+        ]
+    },
+
+    "view": {
+        "button": {
+            "data": [
+                { "id": 1, "nama": "Tambah", "icon": "plus", "url": "d.controller.add()" }
+            ]
+        }
+    },
+
+    "add": {
+        "button": {
+            "data": [
+                { "id": 1, "nama": "Batal",  "icon": "close", "url": "d.closePanel()" },
+                { "id": 2, "nama": "Simpan", "icon": "plus",  "url": "d.service.create()" }
+            ]
+        }
+    },
+
+    "edit": {
+        "button": {
+            "data": [
+                { "id": 1, "nama": "Batal", "icon": "close", "url": "d.closePanel()" },
+                { "id": 2, "nama": "Ubah",  "icon": "pen",   "url": "d.service.update()" }
+            ]
+        }
+    }
+}

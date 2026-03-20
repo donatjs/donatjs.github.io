@@ -1,0 +1,296 @@
+{
+  "page": "web/page/portal-narasi",
+  "data": [
+
+    {
+      "section": "header",
+      "content": {
+        "nama": "DonatJS",
+        "tagline": "Framework yang tidak minta apa-apa dulu sebelum memberikan segalanya.",
+        "deskripsi": "Tidak ada npm install.\nTidak ada webpack.config.js.\nTidak ada node_modules yang perlu Anda tunggu.\n\nHanya dua file, satu folder, dan aplikasi bisnis\nAnda sudah berjalan — hari ini, bukan minggu depan.",
+        "icon":  "donat/150/var(--pColor)-var(--pLightColor)/1/float",
+        "icon1": "wafel/120/var(--pColor)/0.07",
+        "icon2": "piawai/100/var(--pColor)/0.05",
+        "icon3": "kupat/80/var(--pColor)/0.04",
+        "cta": [
+          { "text": "Mulai Sekarang",  "url": "web/page/portal-docs",  "icon": "lightning" },
+          { "text": "Demo Live",       "url": "web/page/portal-demo",  "icon": "eye"      },
+          { "text": "GitHub",          "url": "https://github.com",    "icon": "github"   }
+        ]
+      }
+    },
+
+    {
+      "section": "stats",
+      "caption": "Tiga Pertanyaan yang Selalu Ditanya",
+      "content": [
+        {
+          "id": 1,
+          "nama": "\"Kenapa tidak pakai React?\"",
+          "isi": "Karena klien butuh aplikasi kasir yang jalan besok.\nBukan butuh virtual DOM, fiber scheduler,\natau debat hooks vs class components.\nReact adalah solusi tepat untuk masalah yang tepat.\nMasalah Anda mungkin berbeda.",
+          "icon": "info/150/var(--pColor)",
+          "url": ""
+        },
+        {
+          "id": 2,
+          "nama": "\"Ini bukan framework sungguhan.\"",
+          "isi": "Benar. DonatJS tidak punya CLI,\ntidak punya package di npm,\ndan tidak ada konferensi tentangnya.\nTapi ada 6 aplikasi bisnis yang berjalan\ndi atasnya. Itu lebih penting.",
+          "icon": "check/150/var(--pColor)",
+          "url": ""
+        },
+        {
+          "id": 3,
+          "nama": "\"Bisa scale tidak?\"",
+          "isi": "Tergantung apa yang Anda maksud scale.\nUntuk 100 pengguna internal?\nUntuk UMKM dengan 50 transaksi per hari?\nUntuk LMS dengan 200 siswa?\nYa, bisa. Untuk Twitter? Tidak.",
+          "icon": "database/150/var(--pColor)",
+          "url": ""
+        },
+        {
+          "id": 4,
+          "nama": "\"Kenapa JSON-driven?\"",
+          "isi": "Karena JSON adalah bahasa yang dibaca\nmanusia sekaligus mesin.\nDesainer bisa menulis spec.\nDeveloper bisa membaca spec.\nFrame-work merender spec.\nSatu sumber kebenaran untuk semua.",
+          "icon": "file/150/var(--pColor)",
+          "url": ""
+        }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "DonatJS dalam Garis Waktu Frontend — Posisi yang Jujur",
+      "content": [
+        {
+          "Era":        "2006 — jQuery",
+          "Pendekatan": "DOM manipulation + AJAX — shortcut tanpa arsitektur",
+          "Masalah":    "Spaghetti code, tidak ada routing, tidak ada state",
+          "DonatJS mengambil": "d.gebi(), d.events() — shortcut DOM yang sama, tapi punya pola"
+        },
+        {
+          "Era":        "2010 — Backbone.js",
+          "Pendekatan": "MVC frontend pertama — Model, Collection, View, Router",
+          "Masalah":    "Verbose, extend class, event soup, tidak ada reactive",
+          "DonatJS mengambil": "d.model / d.view / d.controller — MVC tanpa extend class"
+        },
+        {
+          "Era":        "2012 — AngularJS 1.x",
+          "Pendekatan": "Two-way binding, directive, dependency injection",
+          "Masalah":    "Magic terlalu banyak, debug sulit, performance $digest cycle",
+          "DonatJS mengambil": "Prinsip template dari data — tapi eksplisit, bukan magic"
+        },
+        {
+          "Era":        "2013 — React",
+          "Pendekatan": "Component, virtual DOM, JSX, unidirectional data flow",
+          "Masalah":    "Build pipeline wajib, kurva belajar, 400MB node_modules",
+          "DonatJS mengambil": "Prinsip render dari data — tapi ke HTML string, bukan vDOM"
+        },
+        {
+          "Era":        "2017 — JAMstack / Headless",
+          "Pendekatan": "JSON API sebagai backend, JS sebagai frontend, CDN",
+          "Masalah":    "Node.js server wajib, build pipeline, deployment kompleks",
+          "DonatJS mengambil": "JSON sebagai data + render di client — tanpa Node.js"
+        },
+        {
+          "Era":        "2021 — Island Architecture (Astro)",
+          "Pendekatan": "Kirim HTML minimal, hidupkan JS hanya di pulau interaktif",
+          "Masalah":    "Masih butuh Node.js dan build step",
+          "DonatJS mengambil": "Spirit yang sama: minimal JS, render dari data, no build"
+        },
+        {
+          "Era":        "2024 — DonatJS v2.2",
+          "Pendekatan": "Vanilla JS + JSON-driven MVC, no build, no npm",
+          "Masalah":    "Reactive state tidak ada, ekosistem terbatas, SSR tidak ada",
+          "DonatJS mengambil": "—"
+        }
+      ]
+    },
+
+    {
+      "section": "stats",
+      "caption": "Yang Membuat DonatJS Berbeda — Secara Teknis",
+      "content": [
+        {
+          "id": 1,
+          "nama": "Satu objek, semua fitur",
+          "isi": "Object `d` adalah kernel.\nd.gebi(), d.info(), d.modal(), d.sidePanel(),\nd.color(), d.model, d.view, d.controller,\nd.service — semuanya di satu tempat.\nTidak ada import, tidak ada require.",
+          "icon": "setting/150/var(--pColor)",
+          "url": ""
+        },
+        {
+          "id": 2,
+          "nama": "JSON sebagai living spec",
+          "isi": "Tulis JSON → framework render UI.\nForm, tabel, tombol, tab — semua dari JSON.\nGanti struktur tabel? Edit JSON.\nTidak perlu refactor komponen,\ntidak perlu rebuild.",
+          "icon": "file/150/var(--pColor)",
+          "url": ""
+        },
+        {
+          "id": 3,
+          "nama": "Tema dalam satu panggilan",
+          "isi": "Theme.set('donat', 'biru', 'framework')\nSVG pattern + color pallet + layout mode —\ntiga dimensi identitas visual\ndiubah dalam satu baris.",
+          "icon": "piawai/150/var(--pColor)",
+          "url": ""
+        },
+        {
+          "id": 4,
+          "nama": "Ikon deklaratif tanpa build",
+          "isi": "<img data-src=\"home/32/var(--pColor)/1/float\">\nUkuran, warna, opacity, animasi —\nsemua dalam satu atribut HTML.\nGanti tema → semua ikon ikut otomatis.",
+          "icon": "svg/150/var(--pColor)",
+          "url": ""
+        }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "Perbandingan Jujur — DonatJS vs Dunia Nyata",
+      "content": [
+        {
+          "Kriteria":           "Setup awal",
+          "DonatJS":            "Copy 2 file, buat JSON → jalan",
+          "React/Vue/Angular":  "npm install + config + boilerplate — 5–30 menit",
+          "Laravel/WordPress":  "Composer/PHP setup + DB migration — 15–60 menit",
+          "jQuery saja":        "CDN link — cepat tapi tanpa arsitektur"
+        },
+        {
+          "Kriteria":           "Render UI",
+          "DonatJS":            "JSON blok → ui.render.engine() → HTML string",
+          "React/Vue/Angular":  "JSX/SFC + virtual DOM + reconciliation",
+          "Laravel/WordPress":  "Server-side template + reload halaman",
+          "jQuery saja":        "innerHTML manual — tidak ada pola"
+        },
+        {
+          "Kriteria":           "State management",
+          "DonatJS":            "d.model — plain object, eksplisit, tidak reactive",
+          "React/Vue/Angular":  "useState/Vuex/NgRx — reactive, powerful, verbose",
+          "Laravel/WordPress":  "Session PHP / AJAX manual",
+          "jQuery saja":        "Global variable — tidak terstruktur"
+        },
+        {
+          "Kriteria":           "Theming",
+          "DonatJS":            "Theme.set() — SVG + warna + layout, runtime, no rebuild",
+          "React/Vue/Angular":  "CSS modules / Tailwind / styled-components + rebuild",
+          "Laravel/WordPress":  "WordPress themes / Blade + CSS — file terpisah",
+          "jQuery saja":        "CSS manual"
+        },
+        {
+          "Kriteria":           "Deploy",
+          "DonatJS":            "Copy folder ke htdocs / shared hosting — selesai",
+          "React/Vue/Angular":  "npm build → upload dist — atau CI/CD pipeline",
+          "Laravel/WordPress":  "PHP server + DB + Composer — server requirements",
+          "jQuery saja":        "Copy file — mudah tapi tidak ada struktur"
+        },
+        {
+          "Kriteria":           "Target skala",
+          "DonatJS":            "UMKM, internal tools, LMS, POS — tim 1–5 orang",
+          "React/Vue/Angular":  "Consumer apps, tim 10+ — skala besar",
+          "Laravel/WordPress":  "Web apps, CMS, e-commerce — medium to large",
+          "jQuery saja":        "Widget, enhancement, legacy — tidak ada target jelas"
+        }
+      ]
+    },
+
+    {
+      "section": "stats",
+      "caption": "Keterbatasan yang Wajib Anda Tahu",
+      "content": [
+        {
+          "id": 1,
+          "nama": "Tidak ada reaktivitas",
+          "isi": "Perubahan d.model tidak otomatis update DOM.\nAnda harus panggil render ulang eksplisit.\nUntuk aplikasi dengan update sangat granular\n(per keystroke, per ms), ini bottleneck.",
+          "icon": "alert/150/var(--pColor)",
+          "url": ""
+        },
+        {
+          "id": 2,
+          "nama": "Tidak ada SSR / SEO built-in",
+          "isi": "DonatJS adalah client-side rendering murni.\nConten tidak terlihat oleh mesin pencari\ntanpa pre-rendering tambahan.\nUntuk portal publik yang butuh SEO, pertimbangkan Next.js.",
+          "icon": "alert/150/var(--pColor)",
+          "url": ""
+        },
+        {
+          "id": 3,
+          "nama": "Tidak ada TypeScript",
+          "isi": "Seluruh codebase adalah JavaScript vanilla.\nTidak ada type checking, tidak ada autocomplete berbasis tipe.\nUntuk tim besar dengan code review ketat,\nini adalah risiko nyata.",
+          "icon": "alert/150/var(--pColor)",
+          "url": ""
+        },
+        {
+          "id": 4,
+          "nama": "Ekosistem terbatas",
+          "isi": "Tidak ada marketplace plugin.\nTidak ada library komunitas.\nSetiap integrasi (Chart.js, dll)\nharus diadaptasi manual ke pola DonatJS.",
+          "icon": "alert/150/var(--pColor)",
+          "url": ""
+        }
+      ]
+    },
+
+    {
+      "section": "table",
+      "caption": "Untuk Siapa DonatJS — Panduan Jujur",
+      "content": [
+        {
+          "Pilih DonatJS": "Tim 1–5 orang, deadline minggu ini",
+          "Jangan pilih DonatJS": "Tim 20+ dengan CI/CD pipeline yang sudah mature" },
+        {
+          "Pilih DonatJS": "CRUD: produk, karyawan, transaksi, absensi",
+          "Jangan pilih DonatJS": "Real-time collaboration: Google Docs, Figma-like" },
+        {
+          "Pilih DonatJS": "Hosting shared / cPanel tanpa Node.js",
+          "Jangan pilih DonatJS": "Aplikasi butuh SEO tinggi (e-commerce publik, blog)" },
+        {
+          "Pilih DonatJS": "Developer generalis PHP + JS",
+          "Jangan pilih DonatJS": "Frontend specialist dengan TypeScript expertise" },
+        {
+          "Pilih DonatJS": "Prototype harus jalan dalam 1 hari",
+          "Jangan pilih DonatJS": "Codebase 5+ tahun dengan tim yang berganti-ganti" },
+        {
+          "Pilih DonatJS": "Offline app — laptop tanpa internet",
+          "Jangan pilih DonatJS": "Progressive Web App dengan offline sync kompleks" }
+      ]
+    },
+
+    {
+      "section": "stats",
+      "caption": "Filosofi yang Menggerakkan Semuanya",
+      "content": [
+        {
+          "id": 1,
+          "nama": "Teknologi yang tidak terlihat",
+          "isi": "Pengguna tidak tahu dan tidak perlu tahu\nbahwa aplikasi kasir mereka dibangun dengan DonatJS.\nMereka hanya tahu bahwa transaksinya tercatat\ndan laporannya bisa dicetak.",
+          "icon": "idea/150/var(--pColor)",
+          "url": ""
+        },
+        {
+          "id": 2,
+          "nama": "Data drives everything",
+          "isi": "Dari JSON ke layar.\nTidak ada langkah kompilasi di antaranya.\nData adalah instruksi.\nFramework adalah executor.",
+          "icon": "database/150/var(--pColor)",
+          "url": ""
+        },
+        {
+          "id": 3,
+          "nama": "Explicit over magic",
+          "isi": "Jika halaman perlu dirender: panggil render.\nJika cache perlu dibersihkan: panggil invalidate.\nTidak ada yang terjadi di belakang layar\ntanpa Anda ketahui.",
+          "icon": "eye/150/var(--pColor)",
+          "url": ""
+        },
+        {
+          "id": 4,
+          "nama": "Bisnis dulu, teknologi kemudian",
+          "isi": "Framework terbaik adalah yang membuat\nbisnis klien berjalan besok pagi.\nBukan yang paling trendi di Hacker News\natau punya bintang terbanyak di GitHub.",
+          "icon": "check/150/var(--pColor)",
+          "url": ""
+        }
+      ]
+    },
+
+    {
+      "section": "btn",
+      "btn": [
+        { "text": "Ekosistem & Docs",  "url": "web/page/portal-docs", "icon": "book"      },
+        { "text": "Demo Live",         "url": "web/page/portal-demo", "icon": "eye"       },
+        { "text": "Hubungi Kami",      "url": "https://wa.me/6287885073237", "icon": "whatsapp" }
+      ]
+    }
+
+  ]
+}

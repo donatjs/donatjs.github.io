@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta name="Description" content="DonatJS by Wawan Sismadi">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5">
+
+<meta http-equiv="Cache-control" content="public" max-age="31536000">
+<meta http-equiv="Cache-Control" content="max-age=1209600">
+
+
+<!-- <link rel="manifest" href="https://donat.id/pwa/manifest.json"> -->
+
+<!-- Add to home screen for Safari on iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="DonatJS UKM">
+<meta name="mobile-web-app-capable" content="yes">
+
+<link rel="apple-touch-icon" href="https://donat.id/pwa/icons/icon-152x152.png">
+
+<!-- Windows related -->
+<meta name="msapplication-TileImage" content="pwa/icons/icon-144x144.png">
+<meta name="msapplication-TileColor" content="#386CC1">
+<meta name="theme-color" content="#164391">
+
+<meta property="og:title" content="UKM"/>
+<meta property="og:image" content="https://donat.id/app/ukm/donat-ukm.png"/>
+
+<meta property="og:description" content="Usaha Kecil Menengah"/>
+<meta property="og:url" content="https://donat.id/app/ukm"/>
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="627" />
+<!-- TYPE BELOW IS PROBABLY: "website" or "article" or look on https://ogp.me/#types -->
+<meta property="og:type" content="website"/>
+
+<title>Donat</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" href="favicon.png">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path id='pathws' d='M12 10C7 5 4 14 12 17 20 14 17 5 12 10M12 22A8 8 0 0112 2 8 8 0 0112 22Z' /></svg>" type="image/svg+xml">
+
+
+<link rel="stylesheet" type="text/css" href="/al/svg/svg.css" >
+
+<link rel="stylesheet" type="text/css" href="/al/core/donat.css" >
+<link rel="stylesheet" type="text/css" href="/al/kit/login.css" >
+
+<link rel="stylesheet" type="text/css" href="/al/skin/skin.css">
+
+
+</head>
+<body>
+
+<div id="pattern-layer" class=""></div>
+<div id="modal" class="hide depan"></div>
+<div id="bawah"  class="toast hide" > info </div>
+
+<div id="menu" class="menu" tabindex="0" >
+<div class="sidebar-header">
+<div class="logo hide">
+<img data-src="donat/100">
+</div>
+<span>DonatJS</span>
+</div>
+
+
+<ul id='leftmenu'>
+<li data-info="web/page/home"> <img data-src="house"> Home</li>
+<li data-info="web/page/docs" class="item" ><img data-src="menu"> Docs</li>
+<li data-info="web/page/demo"> <img data-src="user"> Demo</li>
+</ul>
+
+<div class="sidebar-footer">
+© 2026 Donat<br>
+Web Templates
+</div>
+
+</div>
+
+<div id="panel-container"></div>
+<div id="main" class="main shadow">
+<div id="header" class="header" ></div>
+<div id="topmenu" class="topmenu sticky-top"> topmenu </div>
+
+<main><div id="content" class="content" ></div></main>
+<div id="footer" class="footer" >
+
+<div id="footer-artikel" class="row">
+
+<div class="col-1-3">
+<div class="artikel">
+<img data-src="sismadi/50">
+<br>
+<strong>Donat </strong><br>
++6287885073237 <br>
+wawan@sismadi.com <br>
+Jakarta <br>
+Dikelola oleh:<br>
+DonatJS <br>
+<img data-src="geo/32">
+<img data-src="linkedin/32/navy">
+<img data-src="facebook/32/red-yellow">
+<img data-src="x/32/blax">
+<img data-src="github/32/black">
+<img data-src="credly/32/orange">
+
+  </div>
+</div>
+
+<div class="col-1-3">
+  <div class="artikel">
+    <h3>Pranala</h3>
+    <ul>
+    <li>ORCID</li>
+    <li>Sinta</li>
+    <li>Linkedin</li>
+    <li>GitHub</li>
+    <li>Google Dev</li>
+    <li>Credly</li>
+    </ul>
+  </div>
+</div>
+
+<div class="col-1-3">
+  <div class="artikel">
+    <h3>Informasi</h3>
+    <ul>
+      <li>Starter Kit</li>
+      <li>Digital Asset</li>
+      <li>Web Templates</li>
+      <li>SystemInterprise</li>
+    </ul>
+  </div>
+</div>
+
+</div>
+Made with <img data-src="donat/32x32" alt="Donat"> by donat.id
+</div>
+</div>
+
+<script type="text/javascript" src="/al/skin/skin.js"></script>
+<script type="text/javascript" src="/al/core/donat.js"></script>
+<script type="text/javascript" src="/al/ui/ui.js"></script>
+<script type="text/javascript" src="/al/ui/ui-code-patch.js"></script>
+
+<script type="text/javascript" src="/al/svg/svg.js"></script>
+<script type="text/javascript" src="/al/kit/login.js"></script>
+<script type="text/javascript" src="/al/kit/web.js"></script>
+<script type="text/javascript" >
+
+config={
+
+api:0,
+db:'web',
+getdata:function(id){ return config.api ? `http://localhost/api/?${id}` : `data/${id}.json`; },
+lms: {
+cert:'data/lms/cert.png',
+},
+apps: [
+{icon:"setting",name:"gen JSON",modal:"web/layout/1"},
+
+{icon:"piawai",name:"SVG",url:"web/svg/loadicons/1"},
+{icon:"edu",name:"LMS",url:"lms/web/page/home"},
+{icon:"qrcode",name:"Presensi",url:"/donat/presensi"},
+{icon:"chart",name:"Inventory",url:"/donat/inventory"},
+{icon:"cart",name:"POS",url:"/donat/pos"},
+{icon:"envelope",name:"Finance",url:"/donat/finance"},
+],
+
+}
+
+const leftMenu = d.gebi('leftmenu');
+
+if (leftMenu) {
+  leftMenu.addEventListener('click', (event) => {
+      const li = event.target.closest('li');
+      if (li && leftMenu.contains(li)) {
+          navigate(li.getAttribute('data-info'));
+      }
+  });
+}
+
+</script>
+
+<script>
+// Theme.set('donat', 'hijau', 'framework');
+</script>
+
+<script>
+  loadSVGLibraries(['/al/svg/svg.json']);
+  addIcon('custom-star', "M 12 2 L 15 9 L 22 9 L 16 14 L 18 21 L 12 17 L 6 21 L 8 14 L 2 9 L 9 9 Z");
+  addIcon('double-box', {
+      viewBox: "0 0 24 24",
+      layers: [
+          { path: "M 2 2 L 10 2 L 10 10 L 2 10 Z", pos: "0,0", fill: "#3498db" },
+          { path: "M 2 2 L 10 2 L 10 10 L 2 10 Z", pos: "12,12", main: true }
+      ]
+  });
+</script>
+
+</body>
+</html>
